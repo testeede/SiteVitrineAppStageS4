@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FraudCheckAssistant - Version Vue.js</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <div class="nav-container">
+                <a href="index.html" class="logo">
+                    <i data-lucide="shield-check"></i>
+                    FraudCheckAssistant
+                </a>
+                <ul class="nav-links">
+                    <li><a href="react.html">Version React</a></li>
+                    <li><a href="vue.html" class="active">Version Vue.js</a></li>
+                    <li><a href="future.html">Version Future</a></li>
+                    <li>
+                        <button id="theme-toggle" class="theme-toggle" aria-label="Basculer le thème">
+                            <i data-lucide="sun" class="theme-icon light-icon"></i>
+                            <i data-lucide="moon" class="theme-icon dark-icon"></i>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <section class="section active vue-section">
+            <div class="section-content">
+                <h1><img src="img/vuejs-logo.png" alt="Vue.js Logo" class="tech-logo">Version 2.0 - Vue.js</h1>
+                <p class="subtitle">Refonte complète pour corriger les problèmes de performance et de maintenabilité</p>
+
+                <h2>Améliorations Majeures</h2>
+                <div class="features">
+                    <div class="feature">
+                        <h3>Performance</h3>
+                        <p>Communication directe avec le NAS, temps de chargement réduits</p>
+                    </div>
+                    <div class="feature">
+                        <h3>Architecture</h3>
+                        <p>Application indépendante, plus facile à maintenir et déployer. Abandon de l'<a href="https://developer.mozilla.org/en-US/docs/Web/API/File_System_API" target="_blank" rel="noopener noreferrer" class="link-vue">API File System Access</a> au profit d'une approche serveur</p>
+                    </div>
+                    <div class="feature">
+                        <h3>Sécurité</h3>
+                        <p>Hébergement sur le même serveur que le NAS, flux réseau réduits</p>
+                    </div>
+                    <div class="feature">
+                        <h3>Containerisation</h3>
+                        <p>Application conditionnée avec Docker, déployée via Jenkins</p>
+                    </div>
+                </div>
+
+                <h2>Aperçu de l'interface</h2>
+                <h3>Mode plein écran</h3>
+                <div class="centered-image-container">
+                    <img src="img/screenVuePleinPage.png" alt="Aperçu de l'interface en mode plein écran" class="responsive-image">
+                </div>
+                <h3>Mode grille</h3>
+                <div class="centered-image-container">
+                    <img src="img/screenVueGrille.png" alt="Aperçu de l'interface en mode grille" class="responsive-image">
+                </div>
+                
+                <h2>Comparaison des Performances</h2>
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Critère</th>
+                            <th>Version React</th>
+                            <th>Version Vue.js</th>
+                            <th>Amélioration</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Temps de traitement par dossier</td>
+                            <td>~60 minutes</td>
+                            <td>< 10 minutes</td>
+                            <td>🟢 6x plus rapide</td>
+                        </tr>
+                        <tr>
+                            <td>Durée pour ouvrir un fichier en pleine page</td>
+                            <td>2 à 3 secondes à chaque fois</td>
+                            <td>Instantanée une fois mise en cache</td>
+                            <td>🟢 Meilleure expérience utilisateur</td>
+                        </tr>
+                        <tr>
+                            <td>Communication NAS</td>
+                            <td>Indirecte</td>
+                            <td>Directe</td>
+                            <td>🟢 Communication optimisée</td>
+                        </tr>
+                        <tr>
+                            <td>Maintenabilité</td>
+                            <td>Dépendance à avec "Memorize"</td>
+                            <td>Application indépendante</td>
+                            <td>🟢 Meilleure maintenabilité</td>
+                        </tr>
+                        <tr>
+                            <td>Sécurité</td>
+                            <td>API File System Access, aller-retour des données</td>
+                            <td>Communication directe avec le serveur</td>
+                            <td>🟢 Risques réduits</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h2>Fonctionnalités Clés</h2>
+                <ul class="clean-list">
+                    <li class="list-item-bordered">✅ Travail sur des dossiers stockés sur le NAS</li>
+                    <li class="list-item-bordered">✅ Validation via des boutons simples (OK/KO)</li>
+                    <li class="list-item-bordered">✅ Traçabilité des validations dans un fichier JSON</li>
+                    <li class="list-item-bordered">✅ Reprise d'activité en cas d'interruption</li>
+                    <li class="list-item-bordered">✅ Interface responsive et intuitive</li>
+                </ul>
+            
+
+                <h2>Echange de données</h2>
+                <p>Le site et le NAS communique directement entre eux, ce qui accroît grandement le taux de transfert des fichiers, d'autant plus qu'ils sont situés au même endroit physiquement.</p>
+                <div style="display: flex; justify-content: center;">
+                    <img src="img/donneesVue.png" alt="Schéma d'échange de données" style="width: 60%; height: auto;">
+                </div>
+
+            <h2>Architecture</h2>
+            <div style="display: flex; justify-content: center;">
+                <img src="img/architectureVue.png" alt="Schéma d'échange de données" style="width: 60%; height: auto;">
+            </div>
+            <p>L'architecture de l'application respecte le principe de séparation des responsabilités, chaque composant a sa propre responsabilité avec une notion de parenté entre eux.</p>
+
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html> 

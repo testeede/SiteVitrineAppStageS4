@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FraudCheckAssistant - Accueil</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <div class="nav-container">
+                <a href="index.html" class="logo">
+                    <i data-lucide="shield-check"></i>
+                    FraudCheckAssistant
+                </a>
+                <ul class="nav-links">
+                    <li><a href="react.html">Version React</a></li>
+                    <li><a href="vue.html">Version Vue.js</a></li>
+                    <li><a href="future.html">Version Future</a></li>
+                    <li>
+                        <button id="theme-toggle" class="theme-toggle" aria-label="Basculer le thème">
+                            <i data-lucide="sun" class="theme-icon light-icon"></i>
+                            <i data-lucide="moon" class="theme-icon dark-icon"></i>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <section class="section active">
+            <div class="section-content">
+                <div class="hero">
+                    <h1>FraudCheckAssistant</h1>
+                    <p>Outil web de validation des alertes de fraude développé pour Yooz</p>
+                </div>
+
+                <div class="context">
+                    <h2>Contexte et Besoin</h2>
+                    <p>Dans un contexte d'accélération de la dématérialisation des factures et face au durcissement des réglementations contre la fraude documentaire, Yooz devait moderniser son processus de validation manuelle des alertes de fraude.</p>
+                    
+                    <p class="margin-top-1">Avant le développement de cette application, la validation se faisait via l'explorateur de fichiers Windows avec des manipulations manuelles fastidieuses, chronophages et sources d'erreurs humaines. Le temps de traitement d'un dossier était de près d'une heure.</p>
+                </div>
+
+                <h2>Évolution de l'Application</h2>
+                <p>Au cours de mon stage, l'application a subi de nombreuses évolutions. Voici les différentes versions de l'application :</p>
+                <div class="versions-grid">
+                    <div class="version-card react" onclick="window.location.href='react.html'">
+                        <div class="version-icon">
+                            <img src="img/react-logo.png" alt="React Logo" class="version-logo">
+                        </div>
+                        <h3>Version 1.0 - React</h3>
+                        <p>Première version développée en React. Fonctionnalités de base mais limitations techniques importantes.</p>
+                        <small class="text-gray">Fichiers locaux uniquement</small>
+                    </div>
+
+                    <div class="version-card vue" onclick="window.location.href='vue.html'">
+                        <div class="version-icon">
+                            <img src="img/vuejs-logo.png" alt="Vue.js Logo" class="version-logo">
+                        </div>
+                        <h3>Version 2.0 - Vue.js</h3>
+                        <p>Refonte complète en Vue.js. Performances optimisées et communication directe avec le NAS.</p>
+                        <small class="text-gray">Optimisé et relié au NAS</small>
+                    </div>
+
+                    <div class="version-card future" onclick="window.location.href='future.html'">
+                        <div class="version-icon">
+                            <i data-lucide="user-lock" style="width: 40px; height: 40px; color: white;"></i>
+                        </div>
+                        <h3>Version 3.0 - Future</h3>
+                        <p>Perpective de l'application intégrant l'authentification et l'intelligence artificielle</p>
+                        <small class="text-gray">Perspectives futures</small>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FraudCheckAssistant - Version React</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <div class="nav-container">
+                <a href="index.html" class="logo">
+                    <i data-lucide="shield-check"></i>
+                    FraudCheckAssistant
+                </a>
+                <ul class="nav-links">
+                    <li><a href="react.html" class="active">Version React</a></li>
+                    <li><a href="vue.html">Version Vue.js</a></li>
+                    <li><a href="future.html">Version Future</a></li>
+                    <li>
+                        <button id="theme-toggle" class="theme-toggle" aria-label="Basculer le thème">
+                            <i data-lucide="sun" class="theme-icon light-icon"></i>
+                            <i data-lucide="moon" class="theme-icon dark-icon"></i>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <section class="section active react-section">
+            <div class="section-content">
+                <h1><img src="img/react-logo.png" alt="React Logo" class="tech-logo">Version 1.0 - React</h1>
+                <p class="subtitle">Première version développée pour remplacer le processus manuel de validation</p>
+
+                <h2>Objectifs de la Version 1.0</h2>
+                <p>L'objectif de cette version était de remplacer le processus manuel de validation des alertes de fraude par un outil web permettant de valider les alertes de fraude de manière plus efficace et rapide.</p>
+                <p>L'application était initialement développée en React avec intégration à l'application existante "Memorize".</p>
+
+
+                <h2>Caractéristiques Techniques</h2>
+                <div class="features">
+                    <div class="feature">
+                        <h3>Framework</h3>
+                        <p>Développée en React avec intégration à l'application existante "Memorize"</p>
+                    </div>
+                    <div class="feature">
+                        <h3>Limitations</h3>
+                        <p>Bugs et lenteurs importantes, communication indirecte avec le NAS</p>
+                    </div>
+                    <div class="feature">
+                        <h3>Fichiers</h3>
+                        <p>Fonctionnait uniquement avec des fichiers locaux via l'<a href="https://developer.mozilla.org/en-US/docs/Web/API/File_System_API" target="_blank" rel="noopener noreferrer" class="link-react">API File System Access</a></p>
+                    </div>
+                </div>
+
+                <h2>Problèmes Identifiés</h2>
+                <ul class="clean-list">
+                    <li class="list-item-bordered">❌ Lenteurs importantes lors de l'accès aux fichiers</li>
+                    <li class="list-item-bordered">❌ Forte dépendance au code existant</li>
+                    <li class="list-item-bordered">❌ Interface quasi-inutilisable sur les dossiers non-locaux à cause de la lenteur</li>
+                    <li class="list-item-bordered">❌ Problèmes de compatibilité avec les <a href="https://developer.mozilla.org/en-US/docs/Web/Security/Secure_Contexts" target="_blank" rel="noopener noreferrer" class="link-react">serveurs HTTP non-sécurisés</a></li>
+                </ul>
+
+                <h2>Aperçu de l'interface</h2>
+                <p class="italic-note">
+                    <em>Note : Je n'ai pu retrouver de capture d'écran de l'application sous cette ancienne version, j'ai donc reproduit l'interface avec une maquette Figma.</em>
+                </p>
+                <div class="centered-image-container">
+                    <img src="img/screenReact.png" alt="Aperçu de l'interface" class="responsive-image">
+                </div>
+
+
+                <h2>Echange de données</h2>
+                <p>Dans cette version, l'outil web faisait office d'intermédiaire dans l'échange de données entre l'utilisateur et le NAS, ce qui ralentissait considérablement les taux de transfert.</p>
+                
+                <p style="margin-top: 1rem;">De plus, l'<a href="https://developer.mozilla.org/en-US/docs/Web/API/File_System_API" target="_blank" rel="noopener noreferrer" style="color: #0ea5e9; text-decoration: none; font-weight: 600;">API File System Access</a> nécessite un <a href="https://developer.mozilla.org/en-US/docs/Web/Security/Secure_Contexts" target="_blank" rel="noopener noreferrer" style="color: #0ea5e9; text-decoration: none; font-weight: 600;">contexte sécurisé</a> (HTTPS) pour fonctionner, ce qui limitait son utilisation dans l'environnement de développement et de test de Yooz qui utilisait encore des connexions HTTP non-sécurisées.</p>
+                <div style="display: flex; justify-content: center;">
+                    <img src="img/donneesReact.png" alt="Schéma d'échange de données" style="width: 60%; height: auto;">
+                </div>
+
+            </div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html> 
