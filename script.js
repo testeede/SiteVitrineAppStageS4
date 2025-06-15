@@ -305,6 +305,66 @@ function initMicroInteractions() {
     });
 }
 
+function initMobileMenu() {
+    const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+    const navLinks = document.getElementById('nav-links');
+    
+    if (!mobileMenuToggle || !navLinks) return;
+
+    // création de l'overlay
+    const overlay = document.createElement('div');
+    overlay.className = 'nav-overlay';
+    document.body.appendChild(overlay);
+
+    // ouvrir/fermer le menu
+    function toggleMenu() {
+        const isActive = navLinks.classList.contains('active');
+        
+        if (isActive) {
+            closeMenu();
+        } else {
+            openMenu();
+        }
+    }
+
+    function openMenu() {
+        navLinks.classList.add('active');
+        mobileMenuToggle.classList.add('active');
+        overlay.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeMenu() {
+        navLinks.classList.remove('active');
+        mobileMenuToggle.classList.remove('active');
+        overlay.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+
+    // Event listeners
+    mobileMenuToggle.addEventListener('click', toggleMenu);
+    overlay.addEventListener('click', closeMenu);
+
+    // pour fermer le menu quand on clique sur un lien
+    navLinks.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', closeMenu);
+    });
+
+    // echap pour fermer le menu
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && navLinks.classList.contains('active')) {
+            closeMenu();
+        }
+    });
+
+    // fermer le menu lors du redimensionnement de la fenêtre
+    window.addEventListener('resize', () => {
+        if (window.innerWidth > 768 && navLinks.classList.contains('active')) {
+            closeMenu();
+        }
+    });
+}
+
 // initialisation
 document.addEventListener('DOMContentLoaded', function() {
     // on lance toutes les fonctionnalités
@@ -318,6 +378,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initLazyLoading();
     enhanceKeyboardNavigation();
     initMicroInteractions();
+    initMobileMenu();
 
     // Anim d'entrée pour les cartes 
     const cards = document.querySelectorAll('.version-card');
